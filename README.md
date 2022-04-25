@@ -13,7 +13,7 @@ Reset a single file:
 Reset already committed changes:
 
     git reset --soft HEAD~1
-    
+
 ## Delete local branches that have been removed from remote repo on fetch/pull
 Delete stale branches in the local repo that no longer exist in the remote repo in each fetch/pull:
 
@@ -23,3 +23,11 @@ Or manually add the following to your ~/.gitconfig:
 
     [fetch]
       prune = true
+
+## Useful entries for your .gitconfig file
+
+### Using a global .gitignore file
+
+    [core]
+        excludesfile = ~/.gitignore
+

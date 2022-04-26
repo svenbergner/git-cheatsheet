@@ -69,3 +69,32 @@ Or manually add the following to your ~/.gitconfig:
     [core]
         excludesfile = ~/.gitignore
 
+## Empty folders
+### Adding an empty folders to your repo
+Git only cares about files. Therefore you can't add an empty folder to your repo. As a convention developers started to add a *.gitkeep* file inside the folder.
+    
+    touch .gitkeep
+    
+Otherwise add a Readme.md file to the folder with information about it.
+
+### Keep a folder empty
+If you want an empty folder and make sure it stays 'clean' for Git, create a .gitignore containing the following lines within:
+
+    # .gitignore sample
+    # Ignore all files in this dir...
+    *
+
+    # ... except for this one.
+    !.gitignore
+
+If you desire to have only one type of files being visible to Git, here is an example how to filter everything out, except .gitignore and all .txt files:
+
+    # .gitignore to keep just .txt files
+    # Filter everything...
+    *
+
+    # ... except the .gitignore...
+    !.gitignore
+
+    # ... and all text files.
+    !*.txt

@@ -98,3 +98,45 @@ If you desire to have only one type of files being visible to Git, here is an ex
 
     # ... and all text files.
     !*.txt
+
+### Global .gitconfig
+An example .gitconfig file which can be used for all git repos on the system if it is placed in your home directory.
+
+    [user]
+	    name = <UserName>
+	    email = <Email-Address>
+    [credential]
+	    helper = manager-core
+    [diff]
+	    tool = bc4
+    [difftool]
+	    prompt = false
+    [difftool "vsdiffmerge"]
+        cmd = \"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer\\vsdiffmerge.exe\" \"$LOCAL\" \"$REMOTE\" //t
+        keepBackup = false
+
+    [difftool "beyondcompare"]
+        cmd = \"C:\\Program Files\\Beyond Compare 4\\BCompare.exe\" \"$LOCAL\" \"$REMOTE\"
+        keepBackup = false
+
+    [merge]
+        tool = bc4
+    [mergetool]
+        prompt = false
+    [mergetool "vsdiffmerge"]
+        cmd = \"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer\\vsdiffmerge.exe\" \"$REMOTE\" \"$LOCAL\" \"$BASE\" \"$MERGED\" //m
+        keepBackup = false
+        trustExitCode = true
+
+    [mergetool "beyondcompare"]
+        cmd = \"C:\\Program Files\\Beyond Compare 4\\BCompare.exe\" \"$REMOTE\" \"$LOCAL\" \"$BASE\" \"$MERGED\"
+        keepBackup = false
+        trustExitCode = true
+    [core]
+        excludesfile = ~/.gitignore
+    [difftool "bc4"]
+        path = C:\\Program Files\\Beyond Compare 4\\BCompare.exe
+    [mergetool "bc4"]
+        path = C:\\Program Files\\Beyond Compare 4\\BCompare.exe
+    [credential "https://<credential server url>"]
+    	provider = generic

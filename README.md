@@ -1,6 +1,14 @@
 # git-cheatsheet
 Collection of tips and tricks for using git
 
+## Contents
+ - [Resetting files](#resetting-files)
+ - [Reset a branch](#reset-a-branch)
+ - [Delete local branches that have been removed from remote repo on fetch/pull](#Delete-local-branches-that-have-been-removed-from-remote-repo-on-fetch/pull)
+[](#)
+[](#)
+[](#)
+
 ## Resetting files 
 Reset all files to the HEAD of the branch
 

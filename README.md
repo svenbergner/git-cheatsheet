@@ -4,10 +4,14 @@ Collection of tips and tricks for using git
 ## Contents
  - [Resetting files](#resetting-files)
  - [Reset a branch](#reset-a-branch)
- - [Delete local branches that have been removed from remote repo on fetch/pull](#delete-local-branches-that-have-been-removed-from-remote-repo-on-fetch/pull)
- - [Useful entries for your .gitconfig file](#useful-entries-for-your-.gitconfig-file)
- - [Using a global .gitignore file](#using-a-global-.gitignore-file)
- - [Global .gitconfig](#global-.gitconfig)
+ - [Delete local branches that have been removed from remote repo on fetch/pull](#delete-local-branches-that-have-been-removed-from-remote-repo-on-fetchpull)
+ - [Useful entries for your .gitconfig file](#useful-entries-for-your-gitconfig-file)
+ - [Using a global .gitignore file](#using-a-global-gitignore-file)
+ - [Empty folders](#empty-folders)
+ - [Adding an empty folders to your repo](#adding-an-empty-folders-to-your-repo)
+ - [Keep a folder empty](#keep-a-folder-empty)
+
+ - [Global .gitconfig](#global-gitconfig)
 
 ## Resetting files 
 Reset all files to the HEAD of the branch

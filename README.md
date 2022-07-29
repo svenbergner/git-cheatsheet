@@ -5,14 +5,14 @@ Collection of tips and tricks for using git
  - [Resetting files](#resetting-files)
  - [Reset a branch](#reset-a-branch)
  - [Delete local branches that have been removed from remote repo on fetch/pull](#delete-local-branches-that-have-been-removed-from-remote-repo-on-fetchpull)
- - [Useful entries for your .gitconfig file](#useful-entries-for-your-gitconfig-file)
- - [Using a global .gitignore file](#using-a-global-gitignore-file)
  - [Empty folders](#empty-folders)
- - [Adding an empty folders to your repo](#adding-an-empty-folders-to-your-repo)
+   - [Adding an empty folders to your repo](#adding-an-empty-folders-to-your-repo)
+   - [Keep a folder empty](#keep-a-folder-empty)
  - [Comparing](#comparing)
- - [Comparing a file from two different branches](#comparing-a-file-from-two-different-branches)
- - [Keep a folder empty](#keep-a-folder-empty)
- - [Global .gitconfig](#global-gitconfig)
+   - [Comparing a file from two different branches](#comparing-a-file-from-two-different-branches)
+ - [Settings](#settings)
+   - [Global .gitconfig](#global-gitconfig)
+   - [Using a global .gitignore file](#using-a-global-gitignore-file)
 
 ## Resetting files 
 Reset all files to the HEAD of the branch
@@ -75,13 +75,6 @@ Or manually add the following to your ~/.gitconfig:
     [fetch]
       prune = true
 
-## Useful entries for your .gitconfig file
-
-### Using a global .gitignore file
-
-    [core]
-        excludesfile = ~/.gitignore
-
 ## Comparing
 What do you need to know about comparing things in Git?
 
@@ -119,6 +112,9 @@ If you desire to have only one type of files being visible to Git, here is an ex
 
     # ... and all text files.
     !*.txt
+
+## Settings
+Useful entries for your .gitconfig file
 
 ### Global .gitconfig
 An example .gitconfig file which can be used for all git repos on the system if it is placed in your home directory.
@@ -161,3 +157,8 @@ An example .gitconfig file which can be used for all git repos on the system if 
         path = C:\\Program Files\\Beyond Compare 4\\BCompare.exe
     [credential "https://<credential server url>"]
     	provider = generic
+
+### Using a global .gitignore file
+
+    [core]
+        excludesfile = ~/.gitignore

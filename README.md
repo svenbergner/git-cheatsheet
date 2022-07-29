@@ -9,8 +9,9 @@ Collection of tips and tricks for using git
  - [Using a global .gitignore file](#using-a-global-gitignore-file)
  - [Empty folders](#empty-folders)
  - [Adding an empty folders to your repo](#adding-an-empty-folders-to-your-repo)
+ - [Comparing](#comparing)
+ - [Comparing a file from two different branches](#comparing-a-file-from-two-different-branches)
  - [Keep a folder empty](#keep-a-folder-empty)
-
  - [Global .gitconfig](#global-gitconfig)
 
 ## Resetting files 
@@ -80,6 +81,14 @@ Or manually add the following to your ~/.gitconfig:
 
     [core]
         excludesfile = ~/.gitignore
+
+## Comparing
+What do you need to know about comparing things in Git?
+
+### Comparing a file from two different branches
+If you want to know the difference of the content of a file between two branches:
+
+    git diff feature_branch main -- file.name
 
 ## Empty folders
 ### Adding an empty folders to your repo

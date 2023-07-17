@@ -62,10 +62,40 @@ Uncommitted changes will be lost. Make sure to stash and commit anything you nee
 And then to reapply these uncommitted changes:
 
     git stash pop    
-    
-    
 
-## Delete local branches that have been removed from remote repo on fetch/pull
+### Undo local changes
+Works only on tracked files with uncommited changes.
+
+To undo all local changes:
+
+    git checkout -- .
+
+To undo changes of a specific file:
+
+    git checkout -- <file>
+
+    
+## Cleanup local repos
+
+### Remove untracked files
+Delete all untracked files and directories, including ignored ones:
+
+    git clean -d -x -f
+
+### Delete local branches
+Delete a local branch that is completely merged to the server:
+
+    git branch -d feature_branch_name
+
+Delete a local branch that is not up to date:
+
+    git branch -D feature_branch_name
+
+### Manually Delete local branches that have been removed from remote repo on fetch/pull
+
+    git fetch --prune origin
+
+### Always delete local branches that have been removed from remote repo on fetch/pull
 Delete stale branches in the local repo that no longer exist in the remote repo in each fetch/pull:
 
     git config --global fetch.prune true

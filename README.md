@@ -16,17 +16,19 @@ Collection of tips and tricks for using git
 
 ## Resetting files 
 Reset all files to the HEAD of the branch
-
+```shell
     git reset --hard HEAD
-
+```
 Reset a single file:
-
+```shell
     git checkout HEAD -- path/to/file
+```
 
 Reset already committed changes:
-
+```shell
     git reset --soft HEAD~1
-    
+```
+
 ## Reset a branch
 Reset your local branch to a remote branch
 
@@ -48,11 +50,12 @@ Then reset to origin:
     
 Maintain current local commits
 It's worth noting that it is possible to maintain current local commits by creating a branch from master before resetting:
-
+```shell
     git checkout master
     git branch new-branch-to-save-current-commits
     git fetch --all
     git reset --hard origin/master
+```
     
 After this, all of the old commits will be kept in new-branch-to-save-current-commits.
 

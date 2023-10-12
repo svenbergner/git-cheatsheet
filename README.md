@@ -153,7 +153,9 @@ Useful entries for your .gitconfig file
 
     git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe"
 
-
+### Automatically setup remote branch on pushing
+    git config --global --add --bool push.autoSetupRemote true
+    
 ### Global .gitconfig
 An example .gitconfig file which can be used for all git repos on the system if it is placed in your home directory.
 

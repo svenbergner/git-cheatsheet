@@ -2,6 +2,7 @@
 Collection of tips and tricks for using git
 
 ## Contents
+ - [Undo last commit](#undo-last-commit)
  - [Resetting files](#resetting-files)
  - [Reset a branch](#reset-a-branch)
  - [Delete local branches that have been removed from remote repo on fetch/pull](#delete-local-branches-that-have-been-removed-from-remote-repo-on-fetchpull)

@@ -14,6 +14,12 @@ Collection of tips and tricks for using git
    - [Global .gitconfig](#global-gitconfig)
    - [Using a global .gitignore file](#using-a-global-gitignore-file)
 
+## Undo last commit
+Undos the last local commit but preserves the changes
+```shell
+	git reset --soft HEAD~
+```
+
 ## Resetting files 
 Reset all files to the HEAD of the branch
 ```shell

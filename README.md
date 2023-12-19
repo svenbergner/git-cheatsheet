@@ -2,6 +2,7 @@
 Collection of tips and tricks for using git
 
 ## Contents
+ - [Preview changes before pulling](#preview-changes-before-pulling)
  - [Undo last commit](#undo-last-commit)
  - [Resetting files](#resetting-files)
  - [Reset a branch](#reset-a-branch)
@@ -15,10 +16,44 @@ Collection of tips and tricks for using git
    - [Global .gitconfig](#global-gitconfig)
    - [Using a global .gitignore file](#using-a-global-gitignore-file)
 
+## Preview changes before pulling
+
+Start with a git fetch to update the state of the remote branches on your local repo.
+
+```shell
+    git fetch
+```
+
+Show the log entries between your last common commit and the origin's master branch
+```shell
+    git log HEAD..origin/master
+```
+
+Show the diffs for each patch
+```shell
+    git log -p HEAD..origin/master
+```
+
+Show the diffs for a single diff
+```shell
+    git diff HEAD...origin/master (n.b. three dots not two) 
+```
+
+If you're not prepared to do a pull and merge in all the remote commits, you can cherry pick the specific remote commits you want.
+
+```shell
+    git cherry-pic <commit-ish>
+```
+
+A git pull will merge in the rest of the commits.
+```shell
+    git pull
+```
+
 ## Undo last commit
 Undos the last local commit but preserves the changes
 ```shell
-	git reset --soft HEAD~
+    git reset --soft HEAD~
 ```
 
 ## Resetting files 

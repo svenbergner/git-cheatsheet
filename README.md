@@ -50,6 +50,14 @@ A git pull will merge in the rest of the commits.
     git pull
 ```
 
+## Diff a file between two branches
+
+Show all differences of a single file between two branches.
+
+```shell
+    git diff branch1..branch2 -- filename.ext
+```
+
 ## Undo last commit
 Undos the last local commit but preserves the changes
 ```shell

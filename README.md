@@ -13,6 +13,7 @@ Collection of tips and tricks for using git
  - [Comparing](#comparing)
    - [Comparing a file from two different branches](#comparing-a-file-from-two-different-branches)
  - [Settings](#settings)
+   - [Reuse Recorded Resolution](#reuse-recorded-resolution)
    - [Global .gitconfig](#global-gitconfig)
    - [Using a global .gitignore file](#using-a-global-gitignore-file)
 
@@ -198,6 +199,17 @@ If you desire to have only one type of files being visible to Git, here is an ex
 
 ## Settings
 Useful entries for your .gitconfig file
+
+### Reuse Recorded Resolution
+If you're rebasing or cherry-picking a lot and you've ever run into the same conflict more than once, 
+you can turn on a feature where Git memorizes the conflict and the resolution to it. If it ever sees 
+that same conflict again, it will automatically re-solve it for you.
+
+You can turn it on with the config setting rerere.enabled and you can further ask it to automatically 
+stage it for you with rerere.autoUpdate
+
+    git config --global rerere.enabled true
+    git config --global rerere.autoUpdate true
 
 ### Using Windows Git Credential Manager on WSL
 

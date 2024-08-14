@@ -1,5 +1,5 @@
-# git-cheatsheet
-Collection of tips and tricks for using git
+# Git CheatSheet
+Collection of Tips and Tricks for using git
 
 ## Contents
  - [Preview changes before pulling](#preview-changes-before-pulling)
@@ -256,6 +256,12 @@ If you desire to have only one type of files being visible to Git, here is an ex
     # ... and all text files.
     !*.txt
 
+## Push Force safely
+Forcing a push has several problems especially when you are working in a team. Here's the safe alternative:
+```shell
+    git push --force-with-lease
+```
+
 ## Settings
 Useful entries for your .gitconfig file
 
@@ -326,5 +332,15 @@ An example .gitconfig file which can be used for all git repos on the system if 
 
 ## Backup repository on a zip file
 ```shell
-	git archive --format=zip --output=output.zip
+    git archive --format=zip --output=output.zip
+```
+
+## Show top contributors
+```shell
+    git shortlog -sn
+```
+
+## Move back to the previous branch
+```shell
+    git checkout -
 ```

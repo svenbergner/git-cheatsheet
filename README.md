@@ -35,6 +35,18 @@ Show the diffs for each patch
     git log -p HEAD..origin/master
 ```
 
+Show one liner log
+If you just run git log, you will notice that the output is quite verbose. If you only want to see the hashes
+```shell
+    git log --oneline
+```
+
+Show history of a specific file
+To check all the changes made on a specific file over time, run
+```shell
+    git log --follow file.txt
+```
+
 Show the diffs for a single diff
 ```shell
     git diff HEAD...origin/master (n.b. three dots not two) 
@@ -52,7 +64,6 @@ A git pull will merge in the rest of the commits.
 ```
 
 ## Diff a file between two branches
-
 Show all differences of a single file between two branches.
 
 ```shell
@@ -82,23 +93,27 @@ Reset already committed changes:
 
 ## Reset a branch
 Reset your local branch to a remote branch
-
+```shell
     git reset --hard origin/branch_to_overwrite
-    
+```
+
 *Important*: All tracked local changes will be lost. All local commits that haven't been pushed will be lost. Untracked files will not be affected.
 
 First, run a fetch to update all origin/\<branch\> refs to latest:
-
+```shell
     git fetch --all
-    
-Backup your current branch:
+```
 
+Backup your current branch:
+```shell
     git branch backup-<branch_name>
+```
 
 Then reset to origin:
-
+```shell
     git reset --hard origin/<branch_name>
-    
+```
+
 Maintain current local commits
 It's worth noting that it is possible to maintain current local commits by creating a branch from master before resetting:
 ```shell
@@ -111,11 +126,14 @@ It's worth noting that it is possible to maintain current local commits by creat
 After this, all of the old commits will be kept in new-branch-to-save-current-commits.
 
 Uncommitted changes will be lost. Make sure to stash and commit anything you need.
-
+```shell
     git stash
-And then to reapply these uncommitted changes:
+```
 
+And then to reapply these uncommitted changes:
+```shell
     git stash pop    
+```
 
 ### Undo local changes
 Works only on tracked files with uncommited changes.
@@ -128,36 +146,76 @@ To undo changes of a specific file:
 
     git checkout -- <file>
 
-    
+### Restore the Staged Area
+A.K.A. unstage files
+```shell
+    git restore --staged .
+```
+
+## Stash
+If you need to cleanup your repo temporarily you have some possibilities to stash your work.
+
+### Create Stash with a Single File/Path
+Since git 2.13 you can save a specific file or path to the stash
+```shell
+    git stash push -u file.txt
+```
+
+### Create Stash including untracked files
+When running git stash, git will include only the tracked files. If you would like to include untracked files you need to add a flag
+```shell
+    git stash --include-untracked
+```
+
 ## Cleanup local repos
+
+### Clean All (tracked and untracked files)
+```shell
+    git clean -df
+```
 
 ### Remove untracked files
 Delete all untracked files and directories, including ignored ones:
-
+```shell
     git clean -d -x -f
+```
 
 ### Delete local branches
 Delete a local branch that is completely merged to the server:
 
+```shell
     git branch -d feature_branch_name
+```
 
 Delete a local branch that is not up to date:
 
+```shell
     git branch -D feature_branch_name
+```
 
 ### Manually Delete local branches that have been removed from remote repo on fetch/pull
 
+```shell
     git fetch --prune origin
+```
 
 ### Always delete local branches that have been removed from remote repo on fetch/pull
 Delete stale branches in the local repo that no longer exist in the remote repo in each fetch/pull:
 
+```shell
     git config --global fetch.prune true
+```
 
 Or manually add the following to your ~/.gitconfig:
 
     [fetch]
       prune = true
+
+### Optimize git repository performance
+If you repository slows down and performance is an issue, you can just run the garbage collector
+```shell
+	git gc --prune=now
+```
 
 ## Comparing
 What do you need to know about comparing things in Git?
@@ -168,6 +226,7 @@ If you want to know the difference of the content of a file between two branches
     git diff feature_branch main -- file.name
 
 ## Empty folders
+
 ### Adding an empty folders to your repo
 Git only cares about files. Therefore you can't add an empty folder to your repo. As a convention developers started to add a *.gitkeep* file inside the folder.
     
@@ -264,3 +323,8 @@ An example .gitconfig file which can be used for all git repos on the system if 
 
     [core]
         excludesfile = ~/.gitignore
+
+## Backup repository on a zip file
+```shell
+	git archive --format=zip --output=output.zip
+```

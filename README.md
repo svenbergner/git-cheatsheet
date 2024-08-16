@@ -211,13 +211,13 @@ Delete a local branch that is not up to date:
     git branch -D feature_branch_name
 ```
 
-### Manually Delete local branches that have been removed from remote repo on fetch/pull
+### Manually Delete local branches that have been removed from remote repo on fetch or pull
 
 ```shell
     git fetch --prune origin
 ```
 
-### Always delete local branches that have been removed from remote repo on fetch/pull
+### Always delete local branches that have been removed from remote repo on fetch or pull
 Delete stale branches in the local repo that no longer exist in the remote repo in each fetch/pull:
 
 ```shell

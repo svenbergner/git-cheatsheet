@@ -157,12 +157,14 @@ And then to reapply these uncommitted changes:
 Works only on tracked files with uncommited changes.
 
 To undo all local changes:
-
+```shell
     git checkout -- .
+```
 
 To undo changes of a specific file:
-
+```shell
     git checkout -- <file>
+```
 
 ### Restore the Staged Area
 A.K.A. unstage files
@@ -225,14 +227,15 @@ Delete stale branches in the local repo that no longer exist in the remote repo 
 ```
 
 Or manually add the following to your ~/.gitconfig:
-
+```
     [fetch]
       prune = true
+```
 
 ### Optimize git repository performance
 If you repository slows down and performance is an issue, you can just run the garbage collector
 ```shell
-	git gc --prune=now
+    git gc --prune=now
 ```
 
 ## Comparing
@@ -240,30 +243,33 @@ What do you need to know about comparing things in Git?
 
 ### Comparing a file from two different branches
 If you want to know the difference of the content of a file between two branches:
-
+```shell
     git diff feature_branch main -- file.name
+```
 
 ## Empty folders
 
 ### Adding an empty folders to your repo
 Git only cares about files. Therefore you can't add an empty folder to your repo. As a convention developers started to add a *.gitkeep* file inside the folder.
-    
+```shell
     touch .gitkeep
-    
+```
+
 Otherwise add a Readme.md file to the folder with information about it.
 
 ### Keep a folder empty
 If you want an empty folder and make sure it stays 'clean' for Git, create a .gitignore containing the following lines within:
-
+```
     # .gitignore sample
     # Ignore all files in this dir...
     *
 
     # ... except for this one.
     !.gitignore
+```
 
 If you desire to have only one type of files being visible to Git, here is an example how to filter everything out, except .gitignore and all .txt files:
-
+```
     # .gitignore to keep just .txt files
     # Filter everything...
     *
@@ -273,6 +279,7 @@ If you desire to have only one type of files being visible to Git, here is an ex
 
     # ... and all text files.
     !*.txt
+```
 
 ## Push Force safely
 Forcing a push has several problems especially when you are working in a team. Here's the safe alternative:
@@ -290,20 +297,25 @@ that same conflict again, it will automatically re-solve it for you.
 
 You can turn it on with the config setting rerere.enabled and you can further ask it to automatically 
 stage it for you with rerere.autoUpdate
-
+```shell
     git config --global rerere.enabled true
     git config --global rerere.autoUpdate true
+```
 
 ### Using Windows Git Credential Manager on WSL
-
+```shell
     git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe"
+```
 
 ### Automatically setup remote branch on pushing
+```shell
     git config --global --add --bool push.autoSetupRemote true
+```
     
 ### Global .gitconfig
 An example .gitconfig file which can be used for all git repos on the system if it is placed in your home directory.
 
+```
     [user]
 	    name = <UserName>
 	    email = <Email-Address>
@@ -342,11 +354,13 @@ An example .gitconfig file which can be used for all git repos on the system if 
         path = C:\\Program Files\\Beyond Compare 4\\BCompare.exe
     [credential "https://<credential server url>"]
     	provider = generic
+```
 
 ### Using a global .gitignore file
-
+```
     [core]
         excludesfile = ~/.gitignore
+```
 
 ## Backup repository on a zip file
 ```shell

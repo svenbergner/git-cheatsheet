@@ -25,6 +25,9 @@ Collection of Tips and Tricks for using git
    - [Adding an empty folders to your repo](#adding-an-empty-folders-to-your-repo)
    - [Keep a folder empty](#keep-a-folder-empty)
  - [Push Force safely](#push-force-safely)
+ - [Getting Repo Information](#getting-repo-information)
+   - [Number of commits in the whole repo](#number-of-commits-in-the-whole-repo)
+   - [Number of commits in a specific revision](#number-of-commits-in-a-specific-revision)
  - [Settings](#settings)
    - [Reuse Recorded Resolution](#reuse-recorded-resolution)
    - [Using Windows Git Credential Manager on WSL](#using-windows-git-credential-manager-on-wsl)
@@ -285,6 +288,20 @@ If you desire to have only one type of files being visible to Git, here is an ex
 Forcing a push has several problems especially when you are working in a team. Here's the safe alternative:
 ```shell
     git push --force-with-lease
+```
+
+## Getting Repo Information
+
+### Number of commits in the whole repo
+
+```shell
+    git rev-list --count --all
+```
+
+### Number of commits in a specific revision
+
+```shell
+    git rev-list --count <revesion>
 ```
 
 ## Settings

@@ -91,6 +91,13 @@ Show all differences of a single file between two branches.
     git diff branch1..branch2 -- filename.ext
 ```
 
+## Show all branches that are completely merged
+Gives you a list of all branches which are completely merged to the current branch. Though they can savely removed.
+
+```shell
+    git branch --merged
+```
+
 ## Undo last commit
 Undos the last local commit but preserves the changes
 ```shell

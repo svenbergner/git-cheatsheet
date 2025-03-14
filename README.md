@@ -4,7 +4,7 @@ Collection of Tips and Tricks for using git
 ## Contents
  - [Preview changes before pulling](#preview-changes-before-pulling)
  - [Diff a file between two branches](#diff-a-file-between-two-branches)
- - [Show all branches that are completely merged](#show-all-branches-that-are-completely- merged)
+ - [Show all branches that are completely merged](#show-all-branches-that-are-completely-merged)
  - [Undo last commit](#undo-last-commit)
  - [Resetting files](#resetting-files)
  - [Reset a branch](#reset-a-branch)

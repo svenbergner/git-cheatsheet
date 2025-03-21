@@ -20,6 +20,7 @@ Collection of Tips and Tricks for using git
    - [Manually Delete local branches that have been removed from remote repo on fetch or pull](#manually-delete-local-branches-that-have-been-removed-from-remote-repo-on-fetch-or-pull)
    - [Always delete local branches that have been removed from remote repo on fetch or pull](#always-delete-local-branches-that-have-been-removed-from-remote-repo-on-fetch-or-pull)
    - [Optimize git repository performance](#optimize-git-repository-performance)
+   - [Fix lineendig problems](#fix-lineending-problems)
 - [Comparing](#comparing)
      - [Comparing a file from two different branches](#comparing-a-file-from-two-different-branches)
  - [Empty folders](#empty-folders)
@@ -247,6 +248,33 @@ Or manually add the following to your ~/.gitconfig:
 If you repository slows down and performance is an issue, you can just run the garbage collector
 ```shell
     git gc --prune=now
+```
+
+### Fix lineending problems
+1. Check the .gitattributes file
+```.gitattributes
+*.sh eol=lf
+```
+
+2. Save the current state
+```shell
+git add . -u
+git commit -m "Saving files before refreshing line endings"
+```
+
+3. Run renormalize to fix fileendings
+```shell
+git add --renormalize .
+```
+
+4. Check the status
+```shell
+git status
+```
+
+5. Commit the changes
+```shell
+git commit -m "Normalize all the line endings"
 ```
 
 ## Comparing

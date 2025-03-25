@@ -30,6 +30,7 @@ Collection of Tips and Tricks for using git
  - [Getting Repo Information](#getting-repo-information)
    - [Number of commits in the whole repo](#number-of-commits-in-the-whole-repo)
    - [Number of commits in a specific revision](#number-of-commits-in-a-specific-revision)
+ - [Change Remote URL](#change-remote-url)
  - [Settings](#settings)
    - [Reuse Recorded Resolution](#reuse-recorded-resolution)
    - [Using Windows Git Credential Manager on WSL](#using-windows-git-credential-manager-on-wsl)
@@ -338,6 +339,29 @@ Forcing a push has several problems especially when you are working in a team. H
 
 ```shell
     git rev-list --count <revesion>
+```
+
+## Change Remote URL
+View existing remotes
+
+```shell
+git remote -v
+
+origin  https://github.com/user/repo.git (fetch)
+origin  https://github.com/user/repo.git (push)
+```
+
+Change the 'origin' remote's URL
+```shell
+git remote set-url origin https://github.com/user/repo2.git
+```
+
+Verify new remote URL
+```shell
+git remote -v
+
+origin  https://github.com/user/repo2.git (fetch)
+origin  https://github.com/user/repo2.git (push)
 ```
 
 ## Settings

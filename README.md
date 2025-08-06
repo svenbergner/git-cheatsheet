@@ -327,6 +327,11 @@ Forcing a push has several problems especially when you are working in a team. H
     git push --force-with-lease
 ```
 
+To make it really save you can activate --force-if-includes globally with the following command:
+```shell
+git config --global push.useForceIfIncludes true
+```
+
 ## Getting Repo Information
 
 ### Number of commits in the whole repo

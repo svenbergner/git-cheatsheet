@@ -305,14 +305,14 @@ Where n is the number of the commit you want to recover from the reflog.
 Here are some tips to improve the performance of your git repository.
 
 ### Write commit graph
-To speed up operations like git log and git blame, you can create a commit-graph file
+To speed up operations like git log, blame or merge-base, you can create a commit-graph file
 
 ```shell
 	git commit-graph write --reachable
 ```
 
 ### Bitmaps
-To speed up operations like git log and git fetch, you can create a bitmap index
+To speed up operations like git push and git fetch, you can create a bitmap index
 
 ```shell
 	git repack -adb --write-bitmap-index

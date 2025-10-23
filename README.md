@@ -284,11 +284,24 @@ git commit -m "Normalize all the line endings"
 Here are some tips to improve the performance of your git repository.
 
 ### Write commit graph
-
 To speed up operations like git log and git blame, you can create a commit-graph file
 
 ```shell
 	git commit-graph write --reachable
+```
+
+### Bitmaps
+To speed up operations like git log and git fetch, you can create a bitmap index
+
+```shell
+	git repack -adb --write-bitmap-index
+```
+
+### Multi-pack index
+To speed up object lookup, you can create a multi-pack index
+
+```shell
+	git multi-pack-index write
 ```
 
 ## Comparing

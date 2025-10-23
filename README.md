@@ -21,6 +21,8 @@ Collection of Tips and Tricks for using git
    - [Always delete local branches that have been removed from remote repo on fetch or pull](#always-delete-local-branches-that-have-been-removed-from-remote-repo-on-fetch-or-pull)
    - [Optimize git repository performance](#optimize-git-repository-performance)
    - [Fix lineendig problems](#fix-lineending-problems)
+- [Performance](#performance)
+   - [Write commit graph](#write-commit-graph)
 - [Comparing](#comparing)
      - [Comparing a file from two different branches](#comparing-a-file-from-two-different-branches)
  - [Empty folders](#empty-folders)
@@ -276,6 +278,17 @@ git status
 5. Commit the changes
 ```shell
 git commit -m "Normalize all the line endings"
+```
+
+## Performance
+Here are some tips to improve the performance of your git repository.
+
+### Write commit graph
+
+To speed up operations like git log and git blame, you can create a commit-graph file
+
+```shell
+	git commit-graph write --reachable
 ```
 
 ## Comparing

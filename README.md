@@ -21,6 +21,9 @@ Collection of Tips and Tricks for using git
    - [Always delete local branches that have been removed from remote repo on fetch or pull](#always-delete-local-branches-that-have-been-removed-from-remote-repo-on-fetch-or-pull)
    - [Optimize git repository performance](#optimize-git-repository-performance)
    - [Fix lineendig problems](#fix-lineending-problems)
+- [Desaster Recovery](#desaster-recovery)
+   - [Show the reflog](#show-the-reflog)
+   - [Recover a lost commit](#recover-a-lost-commit)
 - [Performance](#performance)
    - [Write commit graph](#write-commit-graph)
    - [Bitmaps](#bitmaps)
@@ -281,6 +284,22 @@ git status
 ```shell
 git commit -m "Normalize all the line endings"
 ```
+
+## Desaster Recovery
+If you accidentally deleted a branch or commit, you can try to recover it using the reflog.
+
+### Show the reflog
+You can see all recent actions in your repository with the reflog.
+```shell
+	git reflog
+```
+
+### Recover a lost commit
+You bring back your lost commit with the following command:
+```shell
+	git reset --hard HEAD@{n}
+```
+Where n is the number of the commit you want to recover from the reflog.
 
 ## Performance
 Here are some tips to improve the performance of your git repository.

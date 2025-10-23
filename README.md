@@ -23,6 +23,8 @@ Collection of Tips and Tricks for using git
    - [Fix lineendig problems](#fix-lineending-problems)
 - [Performance](#performance)
    - [Write commit graph](#write-commit-graph)
+   - [Bitmaps](#bitmaps)
+   - [Multi-pack index](#multi-pack-index)
 - [Comparing](#comparing)
      - [Comparing a file from two different branches](#comparing-a-file-from-two-different-branches)
  - [Empty folders](#empty-folders)

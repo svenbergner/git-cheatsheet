@@ -47,6 +47,7 @@ Collection of Tips and Tricks for using git
    - [Backup repository on a zip file](#backup-repository-on-a-zip-file)
    - [Show top contributors](#show-top-contributors)
    - [Move back to the previous branch](#move-back-to-the-previous-branch)
+   - [Update refs on rebase](#update-refs-on-rebase)
 
 ## Preview changes before pulling
 
@@ -504,4 +505,11 @@ An example .gitconfig file which can be used for all git repos on the system if 
 ## Move back to the previous branch
 ```shell
     git checkout -
+```
+
+## Update refs on rebase
+When you rebase a branch, the refs are not updated automatically. You can
+enable this behavior with the following config:
+```shell
+	git config --global rebase.updateRefs true
 ```

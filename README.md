@@ -338,7 +338,9 @@ If you want to know the difference of the content of a file between two branches
 ## Empty folders
 
 ### Adding an empty folders to your repo
-Git only cares about files. Therefore you can't add an empty folder to your repo. As a convention developers started to add a *.gitkeep* file inside the folder.
+Git only cares about files. Therefore you can't add an empty folder to your
+repo. As a convention developers started to add a *.gitkeep* file inside the
+folder.
 ```shell
     touch .gitkeep
 ```
@@ -346,7 +348,8 @@ Git only cares about files. Therefore you can't add an empty folder to your repo
 Otherwise add a Readme.md file to the folder with information about it.
 
 ### Keep a folder empty
-If you want an empty folder and make sure it stays 'clean' for Git, create a .gitignore containing the following lines within:
+If you want an empty folder and make sure it stays 'clean' for Git, create a
+.gitignore containing the following lines within:
 ```
     # .gitignore sample
     # Ignore all files in this dir...
@@ -356,7 +359,8 @@ If you want an empty folder and make sure it stays 'clean' for Git, create a .gi
     !.gitignore
 ```
 
-If you desire to have only one type of files being visible to Git, here is an example how to filter everything out, except .gitignore and all .txt files:
+If you desire to have only one type of files being visible to Git, here is an
+example how to filter everything out, except .gitignore and all .txt files:
 ```
     # .gitignore to keep just .txt files
     # Filter everything...
@@ -370,7 +374,8 @@ If you desire to have only one type of files being visible to Git, here is an ex
 ```
 
 ## Push Force safely
-Forcing a push has several problems especially when you are working in a team. Here's the safe alternative:
+Forcing a push has several problems especially when you are working in a team.
+Here's the safe alternative:
 ```shell
     git push --force-with-lease
 ```

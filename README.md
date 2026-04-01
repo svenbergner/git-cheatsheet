@@ -30,6 +30,8 @@ Collection of Tips and Tricks for using git
    - [Multi-pack index](#multi-pack-index)
 - [Comparing](#comparing)
      - [Comparing a file from two different branches](#comparing-a-file-from-two-different-branches)
+- [Files]
+  - [List tracked files](#list-tracked-files)
  - [Empty folders](#empty-folders)
    - [Adding an empty folders to your repo](#adding-an-empty-folders-to-your-repo)
    - [Keep a folder empty](#keep-a-folder-empty)
@@ -334,6 +336,19 @@ If you want to know the difference of the content of a file between two branches
 ```shell
     git diff feature_branch main -- file.name
 ```
+
+## Files
+
+### List tracked files
+To list all tracked files of the current branch in your repository, you can use
+the following command:
+
+```shell
+	git ls-files -r HEAD --name-only
+```
+
+You can add the option '--full-tree' to get all files of the repository, not only the
+ones in the current folder.
 
 ## Empty folders
 

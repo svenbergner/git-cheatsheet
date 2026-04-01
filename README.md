@@ -7,6 +7,7 @@ Collection of Tips and Tricks for using git
  - [Show all branches that are completely merged](#show-all-branches-that-are-completely-merged)
  - [Undo last commit](#undo-last-commit)
  - [Resetting files](#resetting-files)
+ - [Restore a file to an old commit hash](<README#Restore a file to an old commit hash>)
  - [Reset a branch](#reset-a-branch)
    - [Undo local changes](#undo-local-changes)
    - [Restore the Staged Area](#restore-the-staged-area)
@@ -130,6 +131,12 @@ Reset a single file:
 Reset already committed changes:
 ```shell
     git reset --soft HEAD~1
+```
+
+## Restore a file to an old commit hash
+Restore the content of one or more files to an old commit hash.
+```shell
+    git restore --source=<commithash> /path/to/file1 /path/to/file2 ...
 ```
 
 ## Reset a branch
